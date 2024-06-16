@@ -1,0 +1,16 @@
+fastapi
+pocketbase
+uvicorn
+opencv-python-headless
+redis
+celery[redis]
+transformers
+torch
+torchvision
+torchaudio
+qdrant_client
+malevich @ https://github.com/MalevichAI/malevich/archive/dev/unstable.zip
+moviepy
+scipy
+spectromap
+librosa

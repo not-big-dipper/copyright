@@ -1,0 +1,11 @@
+FROM malevichai/app:python-torch_v0.1
+
+COPY ./requirements.malevich.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ./api/vector ./apps/vector
+COPY ./api/core/process.py ./apps/core/process.py
+RUN touch ./apps/__init__.py
+RUN touch ./apps/core/__init__.py
+
+

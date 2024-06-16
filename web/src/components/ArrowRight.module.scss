@@ -1,0 +1,26 @@
+.infoArrowWrap {
+  cursor: pointer;
+
+  &:hover {
+    .infoArrowActive {
+      stroke: var(--error-red-hovered);
+    }
+  }
+}
+
+.infoArrowWrapDisabled {
+  cursor: not-allowed;
+}
+
+.infoArrow {
+  width: 12px;
+}
+
+.infoArrowActive {
+  stroke: var(--error-red);
+}
+
+.infoArrowDisabled {
+  stroke: #aebac6;
+}
+

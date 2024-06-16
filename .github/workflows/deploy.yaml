@@ -1,0 +1,23 @@
+name: Deploy to SberCloud server
+
+on:
+  push:
+    branches:
+      - main 
+  workflow_dispatch: 
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout source code
+      uses: actions/checkout@v2
+
+    - name: Set up SSH
+      uses: webfactory/ssh-agent@v0.5.3
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Run deploy script
+      run: ssh -o StrictHostKeyChecking=no ${{ vars.SSH_USER }}@176.109.105.24 ${{ vars.SSH_COMMAND }}

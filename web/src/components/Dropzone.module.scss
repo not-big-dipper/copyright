@@ -1,0 +1,40 @@
+.upload {
+  width: 100%;
+  background-color: white;
+  border-radius: 16px;
+  padding: 40px;
+  cursor: pointer;
+  margin-bottom: 30px;
+}
+
+.dashedBorder {
+  border: 3px dashed var(--athens-gray);
+  width: 100%;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+}
+
+.uploadBtn {
+  padding: 19px 25px;
+  font-size: 14px;
+  line-height: 20.4px;
+  background-color: var(--error-red);
+  color: white;
+  border-radius: 6px;
+
+  &:hover {
+    background-color: var(--error-red-hovered);
+  }
+}
+
+.uploadText {
+  font-size: 12px;
+  width: 160px;
+  text-align: center;
+}
+

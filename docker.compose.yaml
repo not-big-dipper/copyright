@@ -1,0 +1,63 @@
+services:
+  qdrant_db:
+    image: qdrant/qdrant:latest
+    ports:
+      - "0.0.0.0:6333:6333"
+    volumes:
+      - qdrant_data:/data
+    environment:
+      - QDRANT_STORAGE_PATH=/data
+      - QDRANT_LOG_LEVEL=debug
+      - QDRANT_LOG_FILE=/data/qdrant.log
+      - QDRANT_HTTP_PORT=6333
+      - QDRANT_GRPC_PORT=6334
+      - QDRANT_METRIC_PORT=6335
+    env_file:
+      - .env
+
+  frontend:
+    build: 
+      context: ./web
+      dockerfile: Dockerfile
+    ports:
+      - "80:5173"
+    depends_on:
+      - qdrant_db
+    env_file:
+      - .env
+
+  pocket_db:
+    build: ./pocketbase/
+    ports:
+      - "0.0.0.0:8080:8080"
+    volumes:
+      - pocket_data:/pb/pb_data
+
+  pocket_db_setup:
+    image: alpine/curl
+    restart: "no"
+    env_file:
+      - .env
+    entrypoint: >
+      curl -X POST http://pocket_db:8080/api/admins --header 'Content-Type: application/json' -d '{"email": "'"$PB_ADMIN_USER"'", "password": "'"$PB_ADMIN_PASS"'", "passwordConfirm": "'"$PB_ADMIN_PASS"'"}'
+    depends_on:
+      - pocket_db
+
+  compute:
+    build: ./compute
+    ports:
+      - "8000:8001"
+    depends_on:
+      - pocket_db
+      - pocket_db_setup
+    env_file:
+      - .env
+    volumes:
+      - malevich_data:/malevich
+    entrypoint: uvicorn api.app:app --host 0.0.0.0 --port 8001
+
+
+volumes:
+  qdrant_data:
+  pocket_data:
+  malevich_data:

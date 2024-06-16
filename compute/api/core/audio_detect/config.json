@@ -1,0 +1,15 @@
+{
+    "sample_rate": 16000,
+    "n_fft": 1024,
+    "n_overlap": 256,
+    "n_perseg": 512,
+    "fraction": 0.02,
+    "mode": 2,
+    "amp_min": 1e-5,
+    "fan_value": 5,
+    "mn_htd": 0,
+    "mx_htd": 200,
+    "peak_sort": true,
+    "fingerprint_reduction": 40,
+    "top_n": 2
+}

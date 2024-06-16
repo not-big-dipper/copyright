@@ -1,0 +1,11 @@
+fastapi
+pocketbase
+uvicorn
+opencv-python-headless
+redis
+celery[redis]
+transformers
+torch
+torchvision
+torchaudio
+qdrant_client

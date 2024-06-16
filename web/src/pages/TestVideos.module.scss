@@ -1,0 +1,140 @@
+.page {
+  padding: 0 40px 16px 48px;
+  width: 100%;
+  height: 100%;
+}
+
+.pageContent {
+  padding: 30px 0 0 0;
+  max-height: calc(100% - 49px);
+  overflow: auto;
+}
+
+.title {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 500;
+  height: 49px;
+  border-bottom: 1px solid var(--athens-gray);
+  display: flex;
+  align-items: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 12px;
+}
+
+.card {
+  padding: 16px;
+  display: flex;
+  background-color: white;
+  border-radius: 12px;
+  width: calc(50% - 6px);
+  gap: 24px;
+  align-items: center;
+
+  @media (max-width: 1250px) {
+    width: 100%;
+  }
+}
+
+.cardPreview {
+  overflow: hidden;
+  border-radius: 4px;
+  min-height: 120px !important;
+  min-width: 192px !important;
+  max-height: 120px !important;
+  max-width: 192px !important;
+  object-fit: contain;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trashWrapper {
+  min-width: 20px;
+  color: var(--bali-hai);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--error-red);
+  }
+}
+
+.cardBlock {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cardTitle {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  width: fit-content;
+  font-size: 14px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+.cardPopup {
+  position: absolute;
+  right: 16px;
+  width: 184px;
+  top: 0;
+  font-size: 10px;
+  color: var(--bali-hai);
+  background-color: white;
+  padding: 4px 8px;
+  border-radius: 8px;
+  box-shadow: -2px 2px 10px rgba(136, 155, 175, 0.25);
+  display: none;
+}
+
+.cardInfo {
+  cursor: pointer;
+  min-width: 14px;
+
+  &:hover {
+    & ~ .cardPopup {
+      display: block;
+    }
+  }
+}
+
+.cardInterval {
+  font-size: 12px;
+  color: var(--bali-hai);
+  margin-top: 16px;
+}
+
+.cardAuthor {
+  margin-top: auto;
+}
+
+.videoWrap {
+  position: relative;
+}
+
+.progress {
+  height: 2px;
+  background-color: var(--error-red);
+  position: absolute;
+  bottom: 8px;
+  z-index: 2;
+}
+
+.progressLine {
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  z-index: 1;
+}
+
