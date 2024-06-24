@@ -1,0 +1,17 @@
+services:
+  compute2:
+    build: ./compute
+    ports:
+      - "8002:8002"
+    depends_on:
+      - pocket_db_setup
+    env_file:
+      - .env
+    volumes:
+      - ./compute/api:/app/api
+    entrypoint: uvicorn api.app:app --host 0.0.0.0 --port 8002 --reload
+
+volumes:
+  qdrant_data:
+  pocket_data:
+  audio_data:

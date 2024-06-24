@@ -1,0 +1,289 @@
+.playerWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.progressBar {
+  position: relative;
+  height: 2.22px;
+  background: rgba(0, 0, 0, 0.35);
+  border-radius: 1px;
+  transition: all 0.15s ease;
+}
+
+.progressBarWrap {
+  top: 0;
+  padding: 6px 0;
+  cursor: pointer;
+  flex-grow: 1;
+
+  &:hover {
+    .progressBar {
+      height: 4px;
+      border-radius: 4px;
+      transition: all 0.15s ease;
+      margin-top: 0;
+    }
+
+    .progressColor {
+      margin-top: 0;
+    }
+
+    .progressRounded {
+      border-radius: 4px;
+      transition: border-radius 0.15s ease;
+    }
+
+    .hoverCircle {
+      width: 8px; /* Размер кружочка */
+      height: 8px;
+      transition: all 0.15s ease;
+    }
+  }
+}
+
+.progressBarWrapHovered {
+  .progressBar {
+    height: 4px;
+    border-radius: 4px;
+    transition: all 0.15s ease;
+  }
+
+  .progressRounded {
+    border-radius: 4px;
+    transition: border-radius 0.15s ease;
+  }
+
+  .hoverCircle {
+    width: 8px; /* Размер кружочка */
+    height: 8px;
+    transition: all 0.15s ease;
+  }
+}
+
+.progress {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background: #e6e4e4;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.progressRounded {
+  transition: border-radius 0.15s ease;
+  border-radius: 2px;
+}
+
+.hoverCircle {
+  width: 0px; /* Размер кружочка */
+  height: 0px;
+  border-radius: 50%; /* Делаем его круглым */
+  background-color: #e6e4e4; /* Цвет кружочка и его прозрачность */
+  transform: translate(50%, -25%); /* Центрируем кружочек относительно указателя мыши */
+  transition: all 0.15s ease;
+  z-index: 2;
+}
+
+.customControls {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 32px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  gap: 14px;
+}
+
+.playBtn {
+  cursor: pointer;
+  width: 12px;
+}
+
+.play {
+  fill: #e6e4e4;
+  height: 11.8px;
+}
+
+.pause {
+  fill: #e6e4e4;
+  width: 8.53px;
+}
+
+.time {
+  font-family: 'Open Sans';
+  font-weight: 800;
+  font-size: 10px;
+  color: #e6e4e4;
+}
+
+.progressColor {
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.selectedInterval {
+  height: 4px;
+  transition: all 0.15s ease;
+  margin-top: -1px;
+}
+
+.notificationWrap {
+  position: relative;
+}
+
+.notification {
+  position: absolute;
+  bottom: 20px;
+  padding: 10px;
+  background: #f9f9fa;
+  color: #fff;
+  border-radius: 5px;
+  display: none;
+  cursor: default !important;
+}
+
+.notification.show {
+  display: block;
+}
+
+.tooltip {
+  background: #f3f3f3 !important;
+  border-radius: 6px !important;
+}
+
+.notificationText {
+  font-family: 'Open Sans' !important;
+  color: #29333d !important;
+
+  &::selection {
+    color: unset !important;
+    background: unset !important;
+  }
+}
+
+.notificationTitle {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+}
+
+.notificationSubtitle {
+  font-size: 11px !important;
+}
+
+.notificationLink {
+  font-size: 11px !important;
+  color: var(--error-red) !important;
+
+  &:hover {
+    text-decoration: underline;
+    color: var(--error-red-hovered) !important;
+  }
+}
+
+.info {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #f9f9fa;
+  padding: 16px 14px 12px 14px;
+  border-radius: 8px;
+  border-top-right-radius: 0;
+}
+
+.infoContent {
+  position: relative;
+}
+
+.infoTitle {
+  color: #29333d;
+  font-weight: 600;
+  font-size: 12px;
+  margin-bottom: 11.2px;
+}
+
+.infoItem {
+  color: #29333d;
+  font-size: 11px;
+  margin-bottom: 6px;
+}
+
+.infoValue {
+  color: var(--error-red);
+}
+
+.infoLink {
+  cursor: pointer;
+
+  &:hover {
+    color: var(--error-red-hovered);
+  }
+}
+
+.infoReport {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--error-red);
+  margin-top: 10px;
+  cursor: pointer;
+
+  &:hover {
+    color: var(--error-red-hovered);
+  }
+}
+
+.infoArrows {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.infoTriangle {
+  height: 40px;
+  position: absolute;
+  left: -14px;
+  top: -11px;
+}
+
+.infoTriangleWarning {
+  fill: var(--warning-yellow);
+}
+
+.infoTriangleError {
+  fill: var(--error-red);
+}
+
+.infoClose {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  height: 8px;
+  stroke: #5a6e82;
+}
+
+.infoCloseWrap {
+  cursor: pointer;
+}
+
+.loaderWrap {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

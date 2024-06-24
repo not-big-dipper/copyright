@@ -1,0 +1,184 @@
+.a4 {
+  min-width: 842px;
+  max-width: 842px;
+  padding: 48px 50px 0 32px;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 44px;
+  font-weight: 600;
+}
+
+.videoName {
+  font-size: 24px;
+  line-height: 17.6px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.videoAuthor {
+  font-size: 14px;
+  margin-bottom: 42px;
+  font-weight: 600;
+}
+
+.blockTitle {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.line {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.gap12 {
+  gap: 12px;
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.secondLineCard {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.verticalDivider {
+  height: 27px;
+  border-right: 1px solid var(--athens-gray);
+}
+
+.notGrow {
+  flex-grow: 0;
+}
+
+.videosList {
+  margin-top: 8px;
+}
+
+.videoItem {
+  font-size: 12px;
+  color: var(--bali-hai);
+}
+
+.lastLine {
+  margin-bottom: 46px;
+}
+
+.comparisonTable {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px dashed #e1e5ea;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 16px;
+
+  &:first-child {
+    border: none;
+  }
+
+  &:nth-child(2) {
+    border-top: none;
+    border-left: none;
+  }
+
+  &:last-child {
+    border-top: none;
+    border-right: none;
+  }
+}
+
+tr {
+  &:first-child {
+    border-bottom: 1px dashed #85898d !important;
+  }
+}
+
+.label {
+  width: 40%;
+}
+
+td {
+  text-align: left;
+  padding: 16px 8px;
+
+  &:first-child {
+    border-left: none;
+  }
+}
+
+.highlight {
+  color: var(--error-red);
+  font-weight: 600;
+}
+
+.timing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.flexTd {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 0 16px;
+}
+
+.timingWrap {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.timing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.timingName {
+  color: #889baf;
+  font-size: 9px;
+}
+
+.smallValue {
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.tableImage {
+  width: 160px;
+  background-color: #b9b9b9;
+}
+
+.page {
+  height: 1200px;
+}

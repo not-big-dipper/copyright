@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+transformers
+torch
+torchvision
+torchaudio
+qdrant_client
+opencv-python-headless
+pandas

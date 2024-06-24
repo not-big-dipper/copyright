@@ -1,0 +1,15 @@
+fastapi
+pocketbase
+uvicorn
+opencv-python-headless
+redis
+celery[redis]
+qdrant_client
+moviepy
+scipy
+spectromap
+librosa
+sqlalchemy
+psycopg2-binary
+pandas
+aiohttp

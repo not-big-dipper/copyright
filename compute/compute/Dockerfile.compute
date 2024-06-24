@@ -1,0 +1,11 @@
+FROM pytorch/pytorch
+
+COPY ./requirements.compute.txt ./requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY ./api/vector /app/vector
+WORKDIR /app
+
+ENTRYPOINT [ "uvicorn", "--host", "0.0.0.0", "--port", "8000", "vector.server:compute"]
+
+

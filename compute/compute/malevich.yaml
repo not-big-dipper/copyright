@@ -1,0 +1,26 @@
+dependencies:
+- process:
+    installer: image
+    options:
+      core_auth_token: null
+      core_auth_user: null
+      core_host: https://core.malevich.ai/
+      image_auth_pass: null
+      image_auth_user: null
+      image_ref: teexone/malevich:lct2
+    package_id: process
+    version: ''
+preferences:
+  log_format: RICH
+  log_level: INFO
+  verbosity:
+    Installation: 0
+    Intrepretation: 0
+    Preparation: 1
+    Removal: 0
+    Results: 1
+    Run: 1
+    Stop: 0
+project_id: null
+space: null
+version: null

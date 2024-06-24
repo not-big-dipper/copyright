@@ -1,8 +1,33 @@
 services:
-    compute:
-      volumes:
-        - ./compute/api:/app/api
-        - malevich_data:/malevich
-      entrypoint: >
-          uvicorn api.app:app --host 0.0.0.0 --reload --port 8001
-      env_file: .dev.env
+  pocket_db_setup:
+    image: alpine/curl
+    restart: "no"
+    env_file:
+      - .env
+    entrypoint: >
+      curl -X POST http://$DATABASE_URL:8080/api/admins --header 'Content-Type: application/json' -d '{"email": "'"$PB_ADMIN_USER"'", "password": "'"$PB_ADMIN_PASS"'", "passwordConfirm": "'"$PB_ADMIN_PASS"'"}'
+
+  compute:
+    build: ./compute
+    ports:
+      - "8001:8001"
+    depends_on:
+      - pocket_db
+      - audio_db
+      - pocket_db_setup
+    env_file:
+      - .env
+    volumes:
+      - ./compute/api:/app/api
+    entrypoint: uvicorn api.app:app --host 0.0.0.0 --port 8001 --reload
+
+  vector_compute:
+    image: teexone/xt:lct-compute
+    ports:
+      - "8271:8000"
+
+
+volumes:
+  qdrant_data:
+  pocket_data:
+  audio_data:
